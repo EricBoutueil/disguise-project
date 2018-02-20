@@ -82,7 +82,7 @@
 </row>
 <row name="cloth_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="cloths" row="id" />
+<default>NULL</default><relation table="Clothes" row="id" />
 </row>
 <row name="review (optional)" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -91,8 +91,11 @@
 <part>id</part>
 </key>
 </table>
-<table x="427" y="163" name="cloths">
+<table x="427" y="163" name="Clothes">
 <row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="title" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="category" null="1" autoincrement="0">
@@ -129,13 +132,13 @@
 <part>id</part>
 </key>
 </table>
-<table x="600" y="52" name="cloths_Themes (optional)">
+<table x="752" y="0" name="Clothes_Themes (optional)">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="cloth_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="cloths" row="id" />
+<default>NULL</default><relation table="Clothes" row="id" />
 </row>
 <row name="theme_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -145,7 +148,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="600" y="251" name="More_Pictures (optional)">
+<table x="825" y="288" name="More_Pictures (optional)">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -154,13 +157,13 @@
 <default>NULL</default></row>
 <row name="cloth_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="cloths" row="id" />
+<default>NULL</default><relation table="Clothes" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="253.71428680419922" y="378" name="Reviews (optional)">
+<table x="268" y="547" name="Reviews (optional)">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
