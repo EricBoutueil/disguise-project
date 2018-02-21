@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :bookings, only:[:show]
-  resources :cloths, only: [ :index, :new,:show ]
+  resources :cloths, only: [ :index, :new, :show ] do
+    resources :bookings, only:[:create]
+  end
 
 end
