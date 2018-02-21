@@ -10,4 +10,7 @@ class Cloth < ApplicationRecord
   validates :category, presence: true #inclusion TODO
   validates :size, presence: true #inclusion TODO
   validates :price_per_day, presence: true, numericality: true
+
+  mount_uploader :main_picture, PhotoUploader
+
 end
