@@ -29,7 +29,7 @@ puts "done users seeds"
   owner = User.all.sample
   cloth = Cloth.create!(
       title: Faker::Lorem.sentence,
-      description: Faker::Lorem.paragraphs,
+      description: Faker::Lorem.paragraph,
       main_picture: Faker::LoremPixel.image("200x400"),
       category: Cloth::CATEGORIES.sample.to_s,
       size: Cloth::SIZES.sample.to_s,
