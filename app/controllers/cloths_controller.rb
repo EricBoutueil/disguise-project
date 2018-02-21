@@ -9,6 +9,7 @@ class ClothsController < ApplicationController
   def show
     @cloth = Cloth.find(params[:id])
     @user = @cloth.owner
+    @booking = Booking.new
   end
   def create
     @cloth = Cloth.new(cloth_params)
