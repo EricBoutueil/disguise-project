@@ -8,7 +8,7 @@ class Cloth < ApplicationRecord
 
   validates :main_picture, presence: true
   validates :title, presence: true
-  validates :category, presence: true #inclusion TODO
-  validates :size, presence: true #inclusion TODO
+  validates :category, presence: true, inclusion: { in: CATEGORIES, message: "%{value} is not a valid category" }
+  validates :size, presence: true, inclusion: { in: SIZES, message: "%{value} is not a valid size" }
   validates :price_per_day, presence: true, numericality: true
 end
