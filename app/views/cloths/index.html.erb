@@ -2,7 +2,8 @@
   <div class="row">
     <% @cloths.each do |cloth| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: url('<%= cl_image_path cloth.main_picture, height: 300, width: 400, crop: :fill %>');">
+        <div class="card" style="background: url('<%= cl_image_path cloth.main_picture, height: 300, width: 400, crop: :fill %>');">
+          <br>
           <p><%= cloth.title %></p>
         </div>
       </div>
