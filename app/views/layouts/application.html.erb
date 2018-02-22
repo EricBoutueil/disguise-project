@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+
+    <title>🎭 The Disguise-Project - RENT A UNIQUE disguise cloth for your PARTY!!! 🎉🎉🎉</title>
+    <meta name="description" content="🎭 The Disguise-Project is The BEST PLACE EVER to found and rent a UNIQUE disguise cloth for your PARTY. 🎉🎉🎉">
+
+    <meta property="og:title" content="🎭 The Disguise-Project - RENT A UNIQUE disguise cloth for your PARTY!!! 🎉🎉🎉">
+    <meta property="og:image" content="disguise1.png">
+    <meta property="og:description" content="🎭 The Disguise-Project is The BEST PLACE EVER to found and rent a UNIQUE disguise cloth for your PARTY. 🎉🎉🎉">
+    <meta property="og:site_name" content="🎭 The Disguise-Project 🎉🎉🎉"/>
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -15,5 +24,7 @@
     <%= yield %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag 'application' %>
+    <%= render 'shared/footer' %>
+>>>>>>> master
   </body>
 </html>

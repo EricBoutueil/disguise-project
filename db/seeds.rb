@@ -30,7 +30,7 @@ puts "done users seeds"
   cloth = Cloth.create!(
       title: Faker::Lorem.sentence,
       description: Faker::Lorem.paragraph,
-      main_picture: Faker::LoremPixel.image("200x400"),
+      main_picture: File.new(File.join(__dir__, "../app/assets/images/disguise#{(2..7).to_a.sample}.jpg")),
       category: Cloth::CATEGORIES.sample.to_s,
       size: Cloth::SIZES.sample.to_s,
       price_per_day: (10..20).to_a.sample.to_i,

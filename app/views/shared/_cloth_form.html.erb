@@ -1,0 +1,11 @@
++<%= simple_form_for @cloth do |f| %>
++  <%= f.error_notification %>
++  <%= f.input :main_picture, required: true, label: "Please select your picture" %>
++  <%= f.input :main_picture_cache, as: :hidden %>
++  <%= f.input :category, required: true, collection: Cloth::CATEGORIES, prompt:"Select the category" %>
++  <%= f.input :size, required: true, collection: Cloth::SIZES, prompt:"Select the size" %>
++  <%= f.input :description, required: true %>
++  <%= f.input :price_per_day, required: true %>
++  <%= f.submit "add your cloth", class: "btn btn-primary" %>
++<% end %>
+
