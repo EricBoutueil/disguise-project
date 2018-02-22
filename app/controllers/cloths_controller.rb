@@ -13,11 +13,13 @@ class ClothsController < ApplicationController
   def new
     @cloth = Cloth.new
   end
+
   def show
     @cloth = Cloth.find(params[:id])
     @user = @cloth.owner
     @booking = Booking.new
   end
+
   def create
     @cloth = Cloth.new(cloth_params)
     @cloth.owner = current_user
