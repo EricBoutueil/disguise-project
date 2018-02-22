@@ -3,8 +3,8 @@ class Cloth < ApplicationRecord
   belongs_to :owner, class_name: "User", foreign_key: :owner_id
   has_many :bookings, dependent: :destroy
 
-  CATEGORIES = ["a", "b", "c"]
-  SIZES = ["aa", "bb", "cc"]
+  CATEGORIES = ["hero", "princesse", "animal", "EJF", "EVG"]
+  SIZES = ["XS", "S", "M", "L", "XL", "Unique size"]
 
   validates :main_picture, presence: true
   validates :title, presence: true
