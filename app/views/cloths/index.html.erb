@@ -25,8 +25,8 @@
 
     </form>
     <% @cloths.each do |cloth| %>
-      <div class="col-md-4">
-        <div class="card" style="background-image: url(<%= cloth.main_picture %>);">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: url('<%= cl_image_path cloth.main_picture, height: 300, width: 400, crop: :fill %>');">
           <p><%= cloth.title %></p>
         </div>
       </div>

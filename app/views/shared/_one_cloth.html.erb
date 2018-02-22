@@ -9,15 +9,29 @@ booking : start date, end date, total booking price-->
 <%= @cloth.size %>
 <br>
 <%= @cloth.main_picture %>
+<!-- <div class="col-md-4">
+      <div class="card" style="background-image: url(<%= @cloth.main_picture %>);"> -->
 <br>
 <%= @cloth.description %>
 <br>
-<%= @cloth.price_per_day %>
-<br>
 <br>
 
-<%= @booking.start_date %>
-<br>
-<%= @booking.end_date %>
-<br>
-<%= @booking.total_booking_price %>
+<% if display_button %>
+  <p><%= @cloth.price_per_day %>€ / day</p>
+  <%= simple_form_for [@cloth, @booking] do |f| %>
+    <%= f.input :start_date, as: :date, start_year: Date.today.year,
+      end_year: Date.today.year,
+      order: [:day, :month, :year] %>
+    <%= f.input :end_date, as: :date, start_year: Date.today.year,
+      end_year: Date.today.year,
+      order: [:day, :month, :year] %>
+    <%= f.submit %>
+    <!-- Faire un js pour total booking price -->
+  <% end %>
+<% else %>
+  <p><%= @cloth.price_per_day %>€ / day</p>
+  <p>date from <%= @booking.start_date %></p>
+  <p>to <%= @booking.end_date %></p>
+  <p><%= @booking.total_booking_price %>€</p>
+<% end %>
+
