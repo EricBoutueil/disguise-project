@@ -9,14 +9,13 @@ class ClothsController < ApplicationController
   def show
     @cloth = Cloth.find(params[:id])
     @user = @cloth.owner
-    @booking = Booking.new
   end
   def create
     @cloth = Cloth.new(cloth_params)
     @cloth.owner = current_user
-    @cloth.owner.owner = true
     if @cloth.save
-      redirect_to cloth_path(@cloth)
+      @cloth.owner.owner = true
+      redirect_to admin_cloths_path
     else
       render :new
     end

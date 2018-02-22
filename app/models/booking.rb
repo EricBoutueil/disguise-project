@@ -3,9 +3,9 @@ class Booking < ApplicationRecord
   belongs_to :cloth
 
   validates :start_date, presence: true,
-    if: :compare_dates(:start_date)
+    :compare_dates(:start_date)
   validates :end_date, presence: true,
-    if: :compare_dates(:end_date)
+    :compare_dates(:end_date)
   validates :total_booking_price, presence: true
 
   def compare_dates(:date)
