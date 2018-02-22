@@ -4,8 +4,8 @@
 }
 
 .btn-small-purple {
-  color: white;
-  padding: 10px 15px;
+  color: #BFABCB;
+  padding: 10px 12px;
   border-radius: 10px;
   font-weight: lighter;
   opacity: 0.6;
@@ -13,15 +13,36 @@
 }
 
 .btn-small-pink {
-  color: white;
-  padding: 10px 15px;
+  color: #F4F4F4;
+  padding: 10px 12px;
   border-radius: 10px;
   font-weight: lighter;
   opacity: 0.6;
   background-color:#F7567C;
-  box-shadow: 5px 5px 5px black;
-
+  box-shadow: 3px 3px 3px black;
+  font-size: 16px;
 }
+
+.btn-xsmall-pink {
+  color: #F4F4F4;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-weight: lighter;
+  opacity: 0.6;
+  background-color:#F7567C;
+  box-shadow: 3px 3px 3px black;
+  font-size: 16px;
+}
+
+.btn-small-white {
+  color: #BFABCB;
+  background-color: #F4F4F4;
+  padding: 4px 15px;
+  border-radius: 7px;
+  opacity: 0.6;
+  background-color:white;
+}
+
 .btn-small:hover {
   opacity: 1;
   text-decoration: none;
