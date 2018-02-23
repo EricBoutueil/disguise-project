@@ -12,9 +12,19 @@ User.destroy_all
 Cloth.destroy_all
 Booking.destroy_all
 
-mat = User.create!(email: "mat@lewagon.fr", password: "azerty")
 
-10.times do
+#Samuel - owner
+sam = User.create!(
+    first_name: "Samuel",
+    last_name: "Olichon",
+    email: "sam@lewagon.fr",
+    password: "azerty",
+    address: Faker::Address.street_address,
+    user_picture: Faker::Avatar
+  )
+puts "done sam"
+
+#10.times do
   user = User.create!(
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
@@ -23,16 +33,50 @@ mat = User.create!(email: "mat@lewagon.fr", password: "azerty")
       address: Faker::Address.street_address,
       user_picture: Faker::Avatar
     )
-end
-puts "done users seeds"
+#end
+puts "done user seed"
 
-5.times do |i|
-  puts "start cloth seeds number #{i}"
-  owner = User.all.sample
+cloth5 = Cloth.create!(
+    title: "The Chinese PERFECTION",
+    description: "Be the most beautifull one for the BEST PARTY of the year!!",
+    main_picture: File.new(File.join(__dir__, "../app/assets/images/disguise5.jpg")),
+    category: "Princess",
+    size: "S",
+    price_per_day: 9,
+    owner: user
+  )
+
+clothEric = Cloth.create!(
+    title: "The GREAT LUIDGI",
+    description: "Enjoy being the only best LUIDGI!!",
+    main_picture: File.new(File.join(__dir__, "../app/assets/images/disguiseEric.jpg")),
+    category: "Heo",
+    size: "M",
+    price_per_day: 9,
+    owner: user
+  )
+
+puts "start cloth seeds"
+cloth1 = Cloth.create!(
+    title: "The REAL V disguise",
+    description: "Do you want to play V?? Here is your disugise!",
+    main_picture: File.new(File.join(__dir__, "../app/assets/images/disguise2.jpg")),
+    category: "Hero",
+    size: "M",
+    price_per_day: 11,
+    owner: sam
+  )
+
+puts "cloths sam done"
+
+a = [3, 4, 6, 7]
+a.each do |x|
+  puts "start cloth seeds number #{x}"
+  owner = user #User.all.sample
   cloth = Cloth.create!(
       title: Faker::Lorem.sentence,
       description: Faker::Lorem.paragraph,
-      main_picture: File.new(File.join(__dir__, "../app/assets/images/disguise#{(2..7).to_a.sample}.jpg")),
+      main_picture: File.new(File.join(__dir__, "../app/assets/images/disguise#{x}.jpg")),
       category: Cloth::CATEGORIES.sample.to_s,
       size: Cloth::SIZES.sample.to_s,
       price_per_day: (10..20).to_a.sample.to_i,
@@ -54,3 +98,13 @@ puts "done users seeds"
   end
 puts "cloths and bookings seeds done"
 end
+
+# clothSam = Cloth.create!(
+#     title: "The best French perruque EVER",
+#     description: "Become the most beautifull PRINCESSE!!",
+#     main_picture: File.new(File.join(__dir__, "../app/assets/images/disguiseSam.jpg")),
+#     category: "Princess",
+#     size: "S",
+#     price_per_day: 9,
+#     owner: sam
+#   )

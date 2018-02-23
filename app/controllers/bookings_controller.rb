@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.cloth = @cloth
     @booking.total_booking_price = (@booking.end_date - @booking.start_date)* @cloth.price_per_day
     if @booking.save
-      redirect_to admin_cloths_path
+      redirect_to booking_path(@booking)
     else
       render 'cloths/show'
     end
