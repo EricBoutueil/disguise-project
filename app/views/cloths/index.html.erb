@@ -5,14 +5,16 @@
       <label for="category"> Category: </label>
       <select name="category" id="category" class="btn-small-white">
         <% Cloth::CATEGORIES.each do |f| %>
+          <option value="" selected disabled hidden>Choose category</option>
           <option value="<%=f%>"> <%=f.capitalize%>
           </option>
         <% end %>
       </select>
 
       <label for="size"> Size: </label>
-      <select name="size" id="size" class="btn-small-white">
+      <select name="size" id="size class="btn-small-white">
         <% Cloth::SIZES.each do |f| %>
+          <option value="" selected disabled hidden>Choose size</option>
           <option value="<%=f%>"> <%=f.capitalize%>
           </option>
         <% end %>
@@ -26,18 +28,17 @@
     </form>
     <% @cloths.each do |cloth| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: url('<%= cl_image_path cloth.main_picture, height: 300, width: 400, crop: :fill %>');">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <p><%= cloth.title %></p>
-        </div>
+        <a href="/cloths/<%= cloth.id %>" >
+          <div class="card" style="background: url('<%= cl_image_path cloth.main_picture, height: 300, width: 400, crop: :fill %>');">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p><%= cloth.title %></p>
+          </div>
+        </a>
       </div>
     <% end %>
   </div>

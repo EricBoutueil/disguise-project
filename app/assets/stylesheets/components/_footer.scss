@@ -8,6 +8,8 @@
   padding: 0px 0px;
   color: rgba(0,0,0,0.3);
   margin-top: 25px;
+  position: absolute;
+  bottom: 0;
 }
 .footer-links {
   display: flex;
@@ -27,3 +29,10 @@
 .footer .fa-heart {
   color: #F7567C;
 }
+
+.footer-design {
+  text-align: center;
+  margin-top: 10px;
+  color:white;
+}
+

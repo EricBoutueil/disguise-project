@@ -12,8 +12,15 @@
   box-shadow: 5px 5px 5px black;
 }
 
+.flexbox{
+  display:inline-flex;
+  width:100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .btn-small-pink {
-  color: #F4F4F4;
+  color: white;
   padding: 10px 12px;
   border-radius: 10px;
   font-weight: lighter;
@@ -21,6 +28,21 @@
   background-color:#F7567C;
   box-shadow: 3px 3px 3px black;
   font-size: 16px;
+  text-decoration:none;
+}
+
+.btn-small-purple-nav {
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: lighter;
+  opacity: 0.6;
+  background-color:#BFABCB;
+  box-shadow: 3px 3px 3px black;
+  font-size: 16px;
+  border-right: 20px;
+  margin-right: 20px;
+  text-decoration:none;
 }
 
 .btn-xsmall-pink {
@@ -42,7 +64,6 @@
   opacity: 0.6;
   background-color:white;
 }
-
 .btn-small:hover {
   opacity: 1;
   text-decoration: none;
