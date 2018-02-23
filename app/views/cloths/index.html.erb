@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="row">
+  <div class="row h2">
 
     <form action="/cloths" method="get">
       <label for="category"> Category: </label>
-      <select name="category" id="category">
+      <select name="category" id="category" class="btn-small-white">
         <% Cloth::CATEGORIES.each do |f| %>
           <option value="<%=f%>"> <%=f.capitalize%>
           </option>
@@ -11,7 +11,7 @@
       </select>
 
       <label for="size"> Size: </label>
-      <select name="size" id="size">
+      <select name="size" id="size" class="btn-small-white">
         <% Cloth::SIZES.each do |f| %>
           <option value="<%=f%>"> <%=f.capitalize%>
           </option>
@@ -20,13 +20,21 @@
 
       <!-- <input type="text" name="date" placeholder="dates?"> -->
 
-      <input type="submit">
+      <input type="submit" class="btn-xsmall-pink">
 
 
     </form>
     <% @cloths.each do |cloth| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background: url('<%= cl_image_path cloth.main_picture, height: 300, width: 400, crop: :fill %>');">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <br>
           <p><%= cloth.title %></p>
         </div>

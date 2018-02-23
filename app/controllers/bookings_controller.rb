@@ -1,4 +1,11 @@
 class BookingsController < ApplicationController
+
+
+  def index
+    @booking = Booking.all
+    @booking = @booking.where(customer_id: params[:customer_id])
+  end
+
   def show
      @booking = Booking.find(params[:id])
      @cloth = @booking.cloth
@@ -11,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.cloth = @cloth
     @booking.total_booking_price = (@booking.end_date - @booking.start_date)* @cloth.price_per_day
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to admin_cloths_path
     else
       render 'cloths/show'
     end
