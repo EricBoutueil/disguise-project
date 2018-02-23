@@ -1,6 +1,6 @@
 <div class="navbar-wagon">
-  <div class="row">
-      Easily rent disguises cloths
+  <div class="row white-text">
+
   </div>
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -12,7 +12,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Sign-in", "#", class: "navbar-wagon-item navbar-wagon-link btn-small-pink rollovericons" %>
+      <%= link_to "Publish a disguise",new_cloth_path, class: "navbar-wagon-item navbar-wagon-link btn-small-purple-nav rollovericons" %>
+      <%= link_to "Sign-in",new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-small-pink rollovericons"%>
 
 
       <!-- Avatar with dropdown menu -->
