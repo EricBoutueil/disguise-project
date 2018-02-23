@@ -12,6 +12,8 @@ User.destroy_all
 Cloth.destroy_all
 Booking.destroy_all
 
+mat = User.create!(email: "mat@lewagon.fr", password: "azerty")
+
 10.times do
   user = User.create!(
       first_name: Faker::Name.first_name,
