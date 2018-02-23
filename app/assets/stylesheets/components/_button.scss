@@ -12,6 +12,13 @@
   box-shadow: 5px 5px 5px black;
 }
 
+.flexbox{
+  display:inline-flex;
+  width:100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .btn-small-pink {
   color: white;
   padding: 10px 15px;
@@ -22,6 +29,8 @@
   box-shadow: 5px 5px 5px black;
 
 }
+
+
 .btn-small:hover {
   opacity: 1;
   text-decoration: none;
