@@ -1,37 +1,60 @@
 
 <!-- cloth : title, catgory, size, main picture, description, price per day,
 booking : start date, end date, total booking price-->
+ <div class="container">
 
-<%= @cloth.title %>
-<br>
-<%= @cloth.category %>
-<br>
-<%= @cloth.size %>
-<br>
-<%= @cloth.main_picture %>
-<!-- <div class="col-md-4">
+<div class="well well-sm">
+  <div class="row d-none">
+    <div class="col-xs-4">
+       <%= @cloth.title %>
+    </div>
+    <div class="col-xs-3">
+     <p> <strong>Category:</strong> <%= @cloth.category %> </p>
+    </div>
+    <div class="col-xs-3">
+      <p> <strong>Size:</strong> <%= @cloth.size %> </p>
+    </div>
+
+  </div>
+ </div>
+  </div>
+
+
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-2">
+
+    <%= cl_image_tag @cloth.main_picture, height: 300, width: 400 %>
+      <!-- <div class="col-md-4">
       <div class="card" style="background-image: url(<%= @cloth.main_picture %>);"> -->
-<br>
-<%= @cloth.description %>
-<br>
-<br>
+    <p><%= @cloth.description %></p>
+  </div>
+  <div class="col-xs-3 col-xs-offset-0">
+     <div class="thumbnail">
+    <% if display_button %>
 
-<% if display_button %>
-  <p><%= @cloth.price_per_day %>€ / day</p>
-  <%= simple_form_for [@cloth, @booking] do |f| %>
-    <%= f.input :start_date, as: :date, start_year: Date.today.year,
-      end_year: Date.today.year,
-      order: [:day, :month, :year] %>
-    <%= f.input :end_date, as: :date, start_year: Date.today.year,
-      end_year: Date.today.year,
-      order: [:day, :month, :year] %>
-    <%= f.submit %>
-    <!-- Faire un js pour total booking price -->
-  <% end %>
-<% else %>
-  <p><%= @cloth.price_per_day %>€ / day</p>
-  <p>date from <%= @booking.start_date %></p>
-  <p>to <%= @booking.end_date %></p>
-  <p><%= @booking.total_booking_price %>€</p>
-<% end %>
+      <p><%= @cloth.price_per_day %>€ / day</p>
+      <%= simple_form_for [@cloth, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, start_year: Date.today.year,
+        end_year: Date.today.year,
+        order: [:day, :month, :year] %>
+        <%= f.input :end_date, as: :date, start_year: Date.today.year,
+        end_year: Date.today.year,
+        order: [:day, :month, :year] %>
+        <div class="flexbox">
+          <%= f.submit "Book", class: "btn-small-pink" %>
+        </div>
+
+
+      <!-- Faire un js pour total booking price -->
+      <% end %>
+    <% else %>
+      <p><%= @cloth.price_per_day %>€ / day</p>
+      <p>date from <%= @booking.start_date %></p>
+      <p>to <%= @booking.end_date %></p>
+      <p><%= @booking.total_booking_price %>€</p>
+    <% end %>
+  </div>
+</div>
+</div>
+
 
