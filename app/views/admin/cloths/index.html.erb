@@ -1,11 +1,25 @@
 
-<h1>Here are your disguise clothes available for renting</h1>
+<div class="alert-info alert">
+  <p>Congratulations you have added 1 cloth!</p>
+</div>
+
+<div class="pink-message">
+  <p>Here are your disguise clothes available for renting</p>
+</div>
 
 <div class="container">
   <div class="row">
     <% @cloths.each do |cloth| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background: url('<%= cl_image_path cloth.main_picture, height: 300, width: 400, crop: :fill %>');">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <br>
           <p><%= cloth.title %></p>
         </div>
